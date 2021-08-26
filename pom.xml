@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.openxsl</groupId>
+		<artifactId>openxsl-parent</artifactId>
+		<version>1.2-SNAPSHOT</version>
+	</parent>
+    <artifactId>xsl-cloud</artifactId>
+	<packaging>pom</packaging>
+
+    <properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    <servlet.version>4.0.1</servlet.version>
+		<spring-secur.version>4.2.4.RELEASE</spring-secur.version> <!--spring-4.3.12-->
+		<spring-data.version>1.10.1.RELEASE</spring-data.version>
+		<open-feign.version>2.2.7.RELEASE</open-feign.version>
+		<fastjson.version>1.2.76</fastjson.version>
+		<druid.version>1.2.6</druid.version>
+        <mybatis.version>3.5.3</mybatis.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.1.11</logback.version>
+		<swagger.version>2.9.2</swagger.version>
+    </properties>
+    
+    <modules>
+	    <module>xsl-gateway</module>
+        <module>xsl-cloud-nacos</module>
+    </modules>
+    
+    <!-- <dependencies>
+    	<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-test</artifactId>
+    	</dependency>
+    </dependencies> -->
+
+	<dependencyManagement>
+	    <dependencies>
+		    <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+			 <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.3.12.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-openfeign</artifactId>
+				<version>${open-feign.version}</version>
+			</dependency>
+
+			<dependency>
+		        <groupId>javax.servlet</groupId>
+		        <artifactId>javax.servlet-api</artifactId>
+				<version>${servlet.version}</version>
+		    </dependency>
+
+	    </dependencies>
+    </dependencyManagement>
+
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    
+    
+    <!-- 环境，通过"mvn -Denv"参数指定 -->
+	<!-- <profiles>
+		<profile>
+			<id>dev</id>
+			<build>
+				<filters>
+					<filter>src/main/resources/profiles/config-dev.properties</filter>
+				</filters>
+				<resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>true</filtering>
+                        <includes>
+                            <include>*.properties</include>
+                        </includes>
+                    </resource>
+                </resources>
+			</build>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>env</name>
+					<value>dev</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles> -->
+
+</project>
