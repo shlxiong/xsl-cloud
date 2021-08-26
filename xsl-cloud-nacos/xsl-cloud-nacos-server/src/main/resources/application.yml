@@ -1,0 +1,21 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: nacos-provider
+    cloud:
+        nacos:
+            discovery:
+                server-addr: 127.0.0.1:8848
+                namespace: 6228d265-5167-4ed1-877f-2deb8704f6e3
+                metadata:
+                    name: provider
+
+feign:
+    client.access-token:
+        dataMap:
+            nacos-discovery-consumer: 2NkU1NTcxNjc0NDY4Njk0RTY1Njg2Nzc5NUE3MTU0NjY0NDZCNDM0ODM5NzI2MTY4NjU3QTRGNDg0NjY3NkU3OTU4NTk3NjM1Nzc2NTUwNDI2Qzc2Njc
+
+corpCode: Yibee.com
+useLocalCache: false

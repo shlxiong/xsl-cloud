@@ -1,0 +1,16 @@
+    <dependency>
+        <groupId>com.openxsl</groupId>
+	    <artifactId>xsl-cloud-feign-authenticate</artifactId>
+		<version>0.1.0</version>
+	</dependency>
+
+1、在SpringApplication类上添加注解 @ComponentScan("com.openxsl.studycloud.feign, 自己项目的包名")
+
+2、客户端
+   spring.application.name = 应用名
+   feign.client.packages = service包名
+   feign.client.access-token = 服务端分配的token
+
+3、服务端
+   feign.client.access-token.dataMap.客户端1applicationName = 客户端1的token
+   feign.client.access-token.dataMap.客户端2applicationName = 客户端2的token
