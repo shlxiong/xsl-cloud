@@ -46,5 +46,4 @@ public class AccessTokenConfig {
 		return dataMap.get(key);
 	}
 	
-
 }

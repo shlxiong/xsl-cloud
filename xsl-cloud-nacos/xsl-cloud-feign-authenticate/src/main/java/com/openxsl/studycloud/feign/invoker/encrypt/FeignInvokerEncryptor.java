@@ -54,9 +54,11 @@ public class FeignInvokerEncryptor {
 	}
 	
 	public static void main(String[] args) {
-		String token = generToken("nacos-discovery-consumer", "Ubuntu#CentOS-6789");
+		String token = generToken("nacos-consumer", "Ubuntu#CentOS-6789");
 		//NkU1NTcxNjc0NDY4Njk0RTY1Njg2Nzc5NUE3MTU0NjY0NDZCNDM0ODM5NzI2MTY4NjU3QTRGNDg0NjY3NkU3OTU4NTk3NjM1Nzc2NTUwNDI2Qzc2Njc
 		System.out.println(token);
+		String origin = getOriginToken("nacos-consumer", token);
+		System.out.println(origin);
 	}
 
 }

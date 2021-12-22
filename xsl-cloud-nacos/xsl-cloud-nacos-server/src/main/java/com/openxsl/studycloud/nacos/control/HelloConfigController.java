@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloConfigController {
 	@Value("${useLocalCache:false}")
     private boolean useLocalCache;
-	@Value("${corpCode:Yibee.com}")
+	@Value("${corpCode:openxsl.com}")
 	private String corpCode;
 
     @GetMapping("/get")

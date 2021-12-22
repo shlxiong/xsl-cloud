@@ -18,6 +18,7 @@ import com.openxsl.studycloud.feign.invoker.encrypt.FeignInvokerEncryptor;
 import com.openxsl.studycloud.feign.invoker.encrypt.HexEncoder;
 
 /**
+ * 服务端拦截器：校验token
  * @author xiongsl
  */
 @Component
